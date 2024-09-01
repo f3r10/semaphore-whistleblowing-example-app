@@ -22,7 +22,7 @@ contract WhistleblowingFactoryContract {
     }
 
     //this method creates the instances of the children contract
-    function SemaphoreWhistleblowingProxy() external payable returns (address semaphoreWhistleblowingProxyContract) {
+    function createSemaphoreWhistleblowingProxy() external payable returns (address semaphoreWhistleblowingProxyContract) {
         
         semaphoreWhistleblowingProxyContract = Clones.clone(implementation);
         SemaphoreWhistleblowing(semaphoreWhistleblowingProxyContract).initialize(
