@@ -26,7 +26,10 @@
     "typescript": ">=4.5.0"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "@semaphore-extensions/contracts": "^1.0.0-beta.2",
     "@semaphore-protocol/group": "^4.0.3",
-    "@semaphore-protocol/identity": "^4.0.3"
+    "@semaphore-protocol/identity": "^4.0.3",
+    "solidity-ls": "^0.5.4"
   }
 }
