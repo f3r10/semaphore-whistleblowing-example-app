@@ -4,6 +4,7 @@ pragma solidity ^0.8.21;
 import "@openzeppelin/contracts/proxy/Clones.sol";
 import "@semaphore-protocol/contracts/interfaces/ISemaphore.sol";
 import "./SemaphoreWhistleblowing.sol";
+import "hardhat/console.sol";
 
 contract WhistleblowingFactoryContract {
     //this variable hold the concrate implementation
@@ -29,7 +30,11 @@ contract WhistleblowingFactoryContract {
 	    address(semaphore)
         );
 
-        semaphoreWhistleblowingProxies.push(semaphoreWhistleblowingProxyContract);
+        semaphoreWhistleblowingProxies.push(address(semaphoreWhistleblowingProxyContract));
+	console.log(
+		"Clone address %s",
+		semaphoreWhistleblowingProxyContract
+	);
         emit SemaphoreWhistleblowingCloneCreated(
             semaphoreWhistleblowingProxyContract,
             semaphoreWhistleblowingProxies.length,

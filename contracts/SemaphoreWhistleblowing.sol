@@ -4,6 +4,7 @@ pragma solidity ^0.8.21;
 import {ISemaphore} from "@semaphore-protocol/contracts/interfaces/ISemaphore.sol";
 import {ISemaphoreWhistleblowing} from "@semaphore-extensions/contracts/interfaces/ISemaphoreWhistleblowing.sol";
 import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+import "hardhat/console.sol";
 
 contract SemaphoreWhistleblowing is ISemaphoreWhistleblowing, Initializable {
     ISemaphore public semaphore;
@@ -27,6 +28,10 @@ contract SemaphoreWhistleblowing is ISemaphoreWhistleblowing, Initializable {
     }
 
     function createEntity(address editor) external override {
+	console.log(
+		"called createEntity from %s",
+		editor
+	);
         uint256 groupId = semaphore.createGroup();
         entities[groupId] = editor;
         emit EntityCreated(groupId, editor);

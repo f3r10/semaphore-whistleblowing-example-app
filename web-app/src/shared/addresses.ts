@@ -1,0 +1,6 @@
+export const Addresses = {
+  FACTORY: "0xA4899D35897033b927acFCf422bc745916139776" as `0x${string}`,
+  WHISLEBLOWING: "0x86A2EE8FAf9A840F7a2c64CA3d51209F9A02081D" as `0x${string}`,
+  SEMAPHOREADDRES:
+    "0x1e0d7FF1610e480fC93BdEC510811ea2Ba6d7c2f" as `0x${string}`,
+};
